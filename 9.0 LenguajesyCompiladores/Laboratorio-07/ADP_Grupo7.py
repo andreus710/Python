@@ -1,8 +1,12 @@
 """
 INTEGRANTES:
-    - Macchiavello Perez, Giuliano
-    - Morales Usca, Andres Fernando
+    - Cordero Alfaro Renzo Pedro
+    - Macchiavello Perez Giuliano
+    - Morales Usca Andres Fernando
+    - Padilla Gutierrez Rodrigo Fabien
+
 """
+
 import re
 
 RESERVED_KEYWORDS = {'switch', 'case', 'break'}
@@ -26,7 +30,7 @@ TOKEN_SPEC = [
 
 TAS = {
     'S': {
-        'SWITCH': ['SWITCH', '(LPAREN)', 'ID', 'RPAREN', 'LLAVEL', 'C', 'LLAVER', 'A']
+        'SWITCH': ['SWITCH', 'LPAREN', 'ID', 'RPAREN', 'LLAVEL', 'C', 'LLAVER', 'A']
     },
     'A': {
         'SWITCH': ['S'],
@@ -118,7 +122,7 @@ class Parser:
             elif stack_top == token:
                 self.stack.pop()
                 self.index += 1
-                #action = f"Emparejar {token}"
+                action = f"Emparejar {token}"
             else:
                 action = f"ERROR: Esperaba {stack_top}, encontró {token} ({value})"
                 print(f"{stack_str:<50} {input_str:<50} {action}")
@@ -131,7 +135,7 @@ def raya():
 
 if __name__ == "__main__":
     try:
-        with open("C:\\Users\\andre\\OneDrive\\Escritorio\\UNI\\Python\\Python\\9.0 LenguajesyCompiladores\\Lab7\\Terminal.txt", 'r', encoding='utf-8') as file:
+        with open("Terminal.txt", 'r', encoding='utf-8') as file:
             code = file.read()
     except FileNotFoundError:
         print("Archivo no encontrado.")

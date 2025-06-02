@@ -1,0 +1,20 @@
+# n: n ́umero de v ́ertices del grafo
+# c: diccionario de costes , indexado por aristas : tuplas (i,j)
+# Se suponen definidas las funciones argmin () y componente ()
+
+def Kruskal (n,c):
+    T = [] # inicializaci ́on del  ́arbol de recubrimiento
+    B = [[i] for i in range (n) ] # inicialmente : n componentes conectadas ,
+
+    # cada una con un v ́ertice
+
+    while len (T) < n -1:
+        e = argmin(c) # se extrae la arista de coste m ́ınimo :
+        c. pop (e)
+        i = componente(B,e [0]) # componente donde est ́a el v ́ertice e [0]
+        j = componente(B,e [1]) # componente donde est ́a el v ́ertice e [1]
+        if i != j:
+            B[i]. extend (B[j]) # se fusionan las componentes
+            B. pop (j)
+            T. append(e) # la arista e entra en la soluci ́on
+    return T
