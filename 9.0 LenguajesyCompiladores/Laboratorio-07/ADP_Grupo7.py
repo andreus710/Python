@@ -135,7 +135,7 @@ def raya():
 
 if __name__ == "__main__":
     try:
-        with open("Terminal.txt", 'r', encoding='utf-8') as file:
+        with open("C:\\Users\\andre\\OneDrive\\Escritorio\\UNI\\Python\\Python\\9.0 LenguajesyCompiladores\\Laboratorio-07\\Terminal.txt", 'r', encoding='utf-8') as file:
             code = file.read()
     except FileNotFoundError:
         print("Archivo no encontrado.")
