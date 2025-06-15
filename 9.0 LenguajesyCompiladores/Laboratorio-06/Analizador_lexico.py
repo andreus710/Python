@@ -59,7 +59,7 @@ def analizador_lexico(codigo_fuente):
                 print(f"\t{tipo} (código {codigo}): {valor}")
             print()  # Separador entre líneas
 
-with open('C:/Users/andre/OneDrive/Escritorio/UNI/Python/Python/9.0 LenguajesyCompiladores/read.txt', 'r') as archivo:
+with open('C:/Users/andre/OneDrive/Escritorio/UNI/Python/Python/9.0 LenguajesyCompiladores/archivolexico.txt', 'r') as archivo:
     contenido = archivo.read()
 
 analizador_lexico(contenido)
